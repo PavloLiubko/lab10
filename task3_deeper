@@ -1,0 +1,52 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main()
+{
+    
+    int matrix[7][2]; // індекс 0 - пам'ять(гб), індекс 1 - ціна (грн)
+    for (int i = 0; i < 7; i ++) {
+        for (int j = 0; j < 2; j++) {
+            int num;
+            cout << "Введіть пам'ять диску(GB) або його ціну(грн) в залежносіті від цифри j(якщо 0 - пам'ять, якщо 1 - ціна) j =" << j << ":";
+            cin >> num;
+            cout << "\n";
+            matrix[i][j] = num;
+        }
+    }
+    cout << "Ціна за наші вінчестери така: \n";
+    for (int i = 0; i < 7; i ++) {
+        for (int j = 0; j < 2; j++) {
+            if (j == 0) {
+                cout << matrix[i][j] << "GB \n";
+            }
+            else {
+                cout << matrix[i][j] << "грн \n";
+            }
+        }
+    }
+    
+    int n;
+    cout << "Введіть ваш бюджет(грн):";
+    cin >> n;
+    
+    std::vector<int> notAfford;
+    
+    for (int i = 0;i < 7; i++) {
+        for (int j = 0; j < 2; j++) {
+            if (matrix[i][j+1] > n) {
+                notAfford.push_back(matrix[i][j]);
+            }
+        }
+    }
+    
+    cout << "Ви не можете позволити собі вінчестери з такою кількістю пам'яті:\n";
+    for (int i = 0; i < notAfford.size(); i++ ) {
+        cout << notAfford[i] << "GB \n";
+    }
+    
+    
+    return 0;
+}
+
