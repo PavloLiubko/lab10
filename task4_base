@@ -1,0 +1,26 @@
+#include <iostream> 
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+srand(time(NULL));
+	
+	int n;
+	cout << "Введіть кількість елементів масиву n:";
+	cin >> n;
+	
+	double A[n];
+	for (int i = 0; i < n; i++){
+		A[i] = rand() % 200;
+}
+	cout << "Наш масив з рандомними числами:\n";
+	for (int i = 0; i < n; i++){
+		cout << A[i] << "\n";
+}
+
+	cout << "В нас 0 сусідніх чисел з різними знаками, оскільки всі вони беруться з діапазону [0;200].";
+
+return 0;
+}
+
