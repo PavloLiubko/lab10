@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int n;
+	cout << "Введіть кількість елементів масиву n:";	
+	cin >> n;
+	cout << "\n";
+	
+	double arr[n];
+	for (int i = 0; i < n ; i++) {
+		cout << "Введіть якесь дійсне число:";
+		cin >> arr[i];
+		cout << "\n";
+}
+
+	cout << "Наш масив: \n";
+	for (int i =0; i < n; i++) {
+		cout << arr[i] << "\n";
+}
+
+
+	for (int i = 0; i < n; i++) {
+		if (i % 2 == 0) {
+			arr[i] *= 2;
+}
+		else {
+			arr[i] = 1/(arr[i]);
+}
+}
+
+	cout << "Наш перетворений масив: \n";
+	for (int i =0; i < n; i++) {
+		cout << arr[i] << "\n";
+}
+
+
+return 0;
+}
+
