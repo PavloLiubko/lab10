@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int n;
+	cout << "Введіть кількість елементів масиву:";
+	cin >> n;	
+	cout << "\n";	
+
+	int a[n];	
+	for (int i = 1; i <=n; i++) {
+		a[i-1] = i; 
+}
+	
+	cout << "Парні числа: \n";
+	for (int el1 = 0; el1 <= n; el1++) {
+		if (a[el1] % 2 == 0) {
+			cout << a[el1] << "\n";
+}
+}
+	cout << "Непарні числа менше 10: \n";
+	for ( int el2 = 0; el2 <= 10; el2++) {
+		if (a[el2] % 2 != 0) {
+			cout << a[el2] << "\n";
+}
+}
+
+	return 0;
+}
+
