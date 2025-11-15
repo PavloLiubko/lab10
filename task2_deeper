@@ -1,0 +1,44 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main()
+{
+    
+    int n;
+    cout << "Введіть кількість елементу масиву n:";
+    cin >> n;
+    
+    std::vector<double> A;
+    for (int i = 0;  i < n; i++) {
+        cout << "Введіть якесь дійсне число:";
+        double num;
+        cin >> num;
+        A.push_back(num);
+    }
+    
+    cout << "Наш масив A:\n"; 
+    for (int i = 0;  i < n; i++) {
+        cout << A[i] << endl;
+    }
+    
+    std::vector<double> B;
+    
+    for (int i = 0;  i < n; i++) {
+        if (A[i] > 0) {
+            B.push_back(A[i]);
+        }
+    }
+    
+    
+    std::sort(B.begin(), B.end());
+    cout << "Масив В: \n"; 
+    for (int i = 0;  i < B.size(); i++) {
+        cout << B[i] << endl;
+    }
+    
+    
+    
+    return 0;
+}
+
